@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+
+  slack_messenger_service:
+    container_name: "slack_messenger_service"
+    build:
+      context: .
+      dockerfile: ./deploy/Dockerfile
+    env_file:
+      - deploy/.env
+    volumes:
+      - ./var/log/slack-messenger-service:/var/log/slack-messenger-service
